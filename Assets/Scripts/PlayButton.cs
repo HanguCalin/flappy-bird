@@ -7,10 +7,10 @@ public class PlayButton : MonoBehaviour
 {
     TMP_Text playtext;
     TMP_Text flappytext;
-    SpriteRenderer button;
+    public SpriteRenderer button;
 
     public GameObject bird;
-    
+    //public bool start = false;
     void Start()
     {
         playtext = GameObject.Find("PlayText").GetComponent<TMP_Text>();

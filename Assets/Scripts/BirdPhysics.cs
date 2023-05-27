@@ -5,20 +5,20 @@ using UnityEngine;
 public class BirdPhysics : MonoBehaviour
 {
 
-    float speed;
-    public float gravity;
-    public float jumpForce;
+    public float gravity = -9.8f;
+    public float strength = 5f;
+
+    private Vector3 direction;
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            speed = jumpForce;
+            direction = Vector3.up * strength;
         }
-        else
-        {
-            speed -= Time.deltaTime * gravity;
-        }
-        transform.position += new Vector3(0, Time.deltaTime * speed);
+
+        direction.y += gravity * Time.deltaTime;
+        transform.position += direction * Time.deltaTime;
     }
+   
 }
