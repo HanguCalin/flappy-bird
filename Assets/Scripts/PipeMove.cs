@@ -5,15 +5,13 @@ using UnityEngine;
 public class PipeMove : MonoBehaviour
 {
     public float speed;
-    SpriteRenderer button;
-    void Start()
-    {
-        button = GameObject.Find("PlayButton").GetComponent<SpriteRenderer>();
-    }
+    public float leftLimit;
 
     void Update()
     {
-        if(button.enabled == false)
-            transform.position += Vector3.left * speed * Time.deltaTime;    
+        transform.position += Vector3.left * speed * Time.deltaTime;
+
+        if (transform.position.x < leftLimit)
+            Destroy(gameObject);
     }
 }

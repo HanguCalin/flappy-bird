@@ -10,28 +10,23 @@ public class PipeSpawner : MonoBehaviour
     public float down;
 
     private float timer = 0;
-    SpriteRenderer button;
+  //  GameObject button;
 
     void Start()
     {
-        button = GameObject.Find("PlayButton").GetComponent<SpriteRenderer>();
-        GameObject newpipe = Instantiate(pipe);
-        newpipe.transform.position += new Vector3(0, Random.Range(-down, up), 0);
+        //button = GameObject.Find("PlayButton");
+        //GameObject newpipe = Instantiate(pipe);
+        //newpipe.transform.position += new Vector3(0, Random.Range(-down, up), 0);
     }
 
     void Update()
     {
-        if(button.enabled == false)
-        {
             if(timer > maxTime)
             {
                 GameObject newpipe = Instantiate(pipe);
                 newpipe.transform.position += new Vector3(0, Random.Range(-down, up), 0);
-                Destroy(newpipe, 15);
                 timer = 0;
             }
             timer += Time.deltaTime;
-        }
-
     }
 }
