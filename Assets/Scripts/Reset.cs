@@ -20,6 +20,6 @@ public class Reset : MonoBehaviour
         FindObjectOfType<GameManager>().gameOver = false;
         resetButton.SetActive(false);
         gameOverText.SetActive(false);
-        //SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Second");
     }
 }
