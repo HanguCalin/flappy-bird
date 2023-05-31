@@ -17,7 +17,6 @@ public class BirdAnimation : MonoBehaviour
         spriterenderer.sprite = sprites[currentSpriteIndex];
     }
 
-    // Update is called once per frame
     private void Update()
     {
         timer += Time.deltaTime;
