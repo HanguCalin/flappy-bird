@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Reset : MonoBehaviour
 {
     public GameObject resetButton;
     public GameObject gameOverText;
-
+    public TMP_Text bestscoreText;
+    GameManager bird;
+    
     void Start()
     {
+        bird = GameObject.Find("Bird").GetComponent<GameManager>();
         resetButton = GameObject.Find("ResetButton");
-        //scoreText = GameObject.Find("ScoreText").GetComponent<TMP_Text>();
         gameOverText = GameObject.Find("GameOverText");
     }
 

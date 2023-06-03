@@ -21,7 +21,7 @@ public class BirdPhysics : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            bird.velocity = 1.5f * Vector2.up * strength;
+            bird.velocity = 1.5f * Vector3.up * strength;
         }
 
         //direction.y += gravity * Time.deltaTime;

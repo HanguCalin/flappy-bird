@@ -7,13 +7,19 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public int score = 0;
-    public bool gameOver = false; 
-    public TMP_Text scoreText;
-    public GameObject resetButton;
-    public GameObject gameOverText;
+    public bool gameOver = false;
+    public static int highScore;
+
+    private TMP_Text scoreText;
+    private GameObject resetButton;
+    private GameObject gameOverText;
+    private TMP_Text bestscoreText;
 
     void Start()
     {
+        highScore = PlayerPrefs.GetInt("hs");
+
+        bestscoreText = GameObject.Find("BestScoreText").GetComponent<TMP_Text>();
         scoreText = GameObject.Find("ScoreText").GetComponent<TMP_Text>();
         resetButton = GameObject.Find("ResetButton");
         gameOverText = GameObject.Find("GameOverText");
@@ -25,10 +31,21 @@ public class GameManager : MonoBehaviour
     {
         string toString = score.ToString();
         scoreText.text = toString;
+
+        string besttoString = highScore.ToString();
+        bestscoreText.text = besttoString;
+
         if(gameOver == true)
         {
             gameOverText.SetActive(true);
             resetButton.SetActive(true);
+            if(score > highScore)
+            {
+                bestscoreText.text = toString;
+                highScore = score;
+            }
+
+            PlayerPrefs.SetInt("hs", highScore);
         }
     }
 }
