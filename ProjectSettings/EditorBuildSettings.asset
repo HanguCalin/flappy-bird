@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Second.unity
     guid: f49478c21dd11e3469dda53d0cae93a5
+  - enabled: 1
+    path: Assets/Scenes/GameMode.unity
+    guid: 2912dce90bbc4514baff9409bacdab7a
+  - enabled: 1
+    path: Assets/Scenes/SecondReskin.unity
+    guid: 3216fb3d73fb3ae4fb547bf3e32e7fb5
   m_configObjects: {}

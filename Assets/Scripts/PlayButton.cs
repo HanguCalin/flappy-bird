@@ -27,6 +27,6 @@ public class PlayButton : MonoBehaviour
         //flappytext.text = "";
         //button.SetActive(false);
         //bird.SetActive(true);
-        SceneManager.LoadScene("Second");   
+        SceneManager.LoadScene("GameMode");   
     }
 }
