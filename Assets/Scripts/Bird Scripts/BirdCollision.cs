@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BirdCollision : MonoBehaviour
 {
+    public AudioSource audioSound;
+    private bool soundPlayed = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Obstacle")
@@ -17,6 +19,11 @@ public class BirdCollision : MonoBehaviour
                 mover.enabled = false;
             foreach (PipeMove pipeMove in FindObjectsOfType<PipeMove>())
                 pipeMove.enabled = false;
+            if(!soundPlayed)
+            {
+                audioSound.Play();
+                soundPlayed = true;
+            }
         }
         else if(collision.tag == "Point")
         {

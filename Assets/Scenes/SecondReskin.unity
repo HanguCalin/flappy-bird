@@ -232,6 +232,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2795018585643477973, guid: 1cad0455dbe1f1342a775af8faf87a40, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c5be4a56a858db34a85bb787f2d47af6, type: 3}
     - target: {fileID: 2830665784887391425, guid: 1cad0455dbe1f1342a775af8faf87a40, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -277,9 +281,17 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2830665784887391427, guid: 1cad0455dbe1f1342a775af8faf87a40, type: 3}
+      propertyPath: audioSound
+      value: 
+      objectReference: {fileID: 741848893}
+    - target: {fileID: 2830665784887391427, guid: 1cad0455dbe1f1342a775af8faf87a40, type: 3}
       propertyPath: doRotation
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2830665784887391430, guid: 1cad0455dbe1f1342a775af8faf87a40, type: 3}
+      propertyPath: audioSound
+      value: 
+      objectReference: {fileID: 741848892}
     - target: {fileID: 2830665784887391452, guid: 1cad0455dbe1f1342a775af8faf87a40, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -332,6 +344,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bird
       objectReference: {fileID: 0}
+    - target: {fileID: 8304944177610463768, guid: 1cad0455dbe1f1342a775af8faf87a40, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8304944177610463768, guid: 1cad0455dbe1f1342a775af8faf87a40, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9c60f77bb4ce29b4dac98212f1844c46, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cad0455dbe1f1342a775af8faf87a40, type: 3}
 --- !u!1 &716783242
@@ -345,6 +365,7 @@ GameObject:
   - component: {fileID: 716783244}
   - component: {fileID: 716783243}
   - component: {fileID: 716783245}
+  - component: {fileID: 716783246}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Obstacle
@@ -372,7 +393,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5df4fbed19bb3654f8b8c24652bcfb2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -394,7 +415,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9762de940dce1b44f9d5d35878f0dc34, type: 3}
-  m_Color: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -445,6 +466,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 21.6, y: 1.8035157}
   m_EdgeRadius: 0
+--- !u!114 &716783246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716783242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576b9ba3eb6e3a049a3d755fd9e003ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 7
+--- !u!82 &741848892 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8304944177610463768, guid: 1cad0455dbe1f1342a775af8faf87a40, type: 3}
+  m_PrefabInstance: {fileID: 219586142}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &741848893 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2795018585643477973, guid: 1cad0455dbe1f1342a775af8faf87a40, type: 3}
+  m_PrefabInstance: {fileID: 219586142}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &927915294
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576b9ba3eb6e3a049a3d755fd9e003ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
+  speed: 10
 --- !u!1 &964312581
 GameObject:
   m_ObjectHideFlags: 0
